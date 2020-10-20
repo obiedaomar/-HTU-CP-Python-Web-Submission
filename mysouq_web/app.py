@@ -210,10 +210,13 @@ def view_product(product_id):
 def view_favorites():
     form = productForm()
     #store the data from the form as json
-    data = {'title':form.title.data,
-            'description':form.description.data
-            
-        }
+    data={'maker':form.maker.data,
+            'model':form.model.data,
+            'img_link':form.img_link.data,
+            'specs':form.specs.data,
+            'memory':form.memory.data,
+            'ram':form.ram.data,
+            'price':form.price.dat
     #send the json data to the api 
     r = requests.get(
         'http://localhost:8080/api/v1/product/favorites', json = data )
@@ -232,11 +235,13 @@ def search():
 
         #store the data from the form as json  
        
-        data = {'title':form.title.data,
-                'description':form.description.data,
-                
-                
-            }
+        data={'maker':form.maker.data,
+            'model':form.model.data,
+            'img_link':form.img_link.data,
+            'specs':form.specs.data,
+            'memory':form.memory.data,
+            'ram':form.ram.data,
+            'price':form.price.dat
         #send the json data to the api 
         r = requests.post(
             'http://localhost:8080/api/v1/product/search', json = data )
@@ -247,7 +252,7 @@ def search():
       
     return render_template("search/result.html",items=items)
 
-@app.route("/descending-sort",methods=['GET','POST'])    
+@app.route("/sort-2",methods=['GET','POST'])    
 def descending_sort():
 
     form = productForm()
@@ -257,11 +262,13 @@ def descending_sort():
 
     else:   
         #store the data from the form as json   
-        data = {'title':form.title.data,
-                'description':form.description.data,
-                'price':form.price.data
-                
-            }
+        data={'maker':form.maker.data,
+            'model':form.model.data,
+            'img_link':form.img_link.data,
+            'specs':form.specs.data,
+            'memory':form.memory.data,
+            'ram':form.ram.data,
+            'price':form.price.dat
         #send the json data to the api 
         r = requests.post(
             'http://localhost:8080/api/v1/product/des_sort', json = data )
@@ -272,8 +279,8 @@ def descending_sort():
       
     return render_template("sort/result_sort.html",descending_items=descending_items)
         
-@app.route("/ascending-sort",methods=['GET','POST'])    
-def ascending_sort():
+@app.route("/sort-1",methods=['GET','POST'])    
+def sort():
 
     form = productForm()
 
@@ -283,11 +290,13 @@ def ascending_sort():
     else:   
 
         #store the data from the form as json         
-        data = {'title':form.title.data,
-                'description':form.description.data,
-                'price':form.price.data
-                
-            }
+        data={'maker':form.maker.data,
+            'model':form.model.data,
+            'img_link':form.img_link.data,
+            'specs':form.specs.data,
+            'memory':form.memory.data,
+            'ram':form.ram.data,
+            'price':form.price.dat
         #send the json data to the api 
         r = requests.post(
             'http://localhost:8080/api/v1/item/asc-sort.html', json = data )
