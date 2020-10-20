@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+<!-- header title block -->
+{% block header_title%}Search{% endblock%}
+<!-- header subtitle block -->
+{% block header_subtitle %} Search for any task by title or descrption{% endblock %}
+<!-- actions block -->
+{% block actions %} {% endblock %}
+
+<!-- Content block -->
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12 order-md-1">
+      <form class="form-signin" method="POST">
+        <label for="inputSearchKeyword" >Search Keyword</label>
+        <input
+          type="text"
+          id="inputSearchKeyword"
+          name="search-keyword"
+          class="form-control mb-3"
+          placeholder="Enter search keyword"
+          required=""
+          autofocus=""
+        />
+        
+        <button class="btn btn-lg btn-secondary btn-block" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

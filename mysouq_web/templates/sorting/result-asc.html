@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+{% block title %}Sort{% endblock %}
+
+{% block content %}
+    <main class="container signup-section">
+
+    <div class="row justify-content-between">
+        <div class="col-md-12 mb-3">
+        {% if  ascending_product %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">price</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in  ascending_product %}
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{i.title}}</td>
+                <td>{{i.description}}</td>
+                <td>{{i.price}}</td>
+
+                
+            
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h5>You have no products.</h5>
+        {% endif %}
+        </div>
+    </div>
+
+</main>
+{% endblock %}    

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<!-- header title block -->
+{% block header_title%}Search Results for '{{keyword}}' {% endblock%}
+<!-- header subtitle block -->
+{% block header_subtitle %} Search for any task by title or descrption{% endblock %}
+<!-- actions block -->
+{% block actions %} {% endblock %}
+
+<!-- Content block -->
+{% block content %}
+{% block content %}
+    <main class="container signup-section">
+
+    <div class="row justify-content-between">
+        <div class="col-md-12 mb-3">
+        {% if product %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in product %}
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{i.title}}</td>
+                <td>{{i.description}}</td>
+                
+            
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h5>You have no product.</h5>
+        {% endif %}
+        </div>
+    </div>
+
+</main>
+{% endblock %} 

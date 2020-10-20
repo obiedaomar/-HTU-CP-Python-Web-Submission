@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+
+{% block title %}Sort{% endblock %}
+
+{% block content %}
+    <main class="container signup-section">
+        <div class="section-content">
+            <h2>sortproduct</h2>
+            
+            <form method="POST" >
+
+
+                <div class="form-group">
+                    {{ form.title.label }}
+                    {{ form.title() }}
+                </div>
+                <div class="form-group">
+                    {{ form.description.label }}
+                    {{ form.description() }}
+                </div>
+                
+              
+                <p>
+                    <input type="submit" value="Ascending_Sort" />
+                </p>
+                           
+               
+
+
+            </form>
+        </div>
+            {% for i in ascending_product    %}
+            <p>Title:{{i.title }}</p>  
+            <p>Description:{{i.description}}</p>  
+            <p>price:{{i.price}}</p>  
+
+            {% endfor %}             
+                     
+        </div>
+    </main>
+{% endblock %}
