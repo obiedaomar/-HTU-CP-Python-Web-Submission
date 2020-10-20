@@ -12,14 +12,14 @@
             <h4>{{total | currency}}</h4>
         </div>
         <ul class="cart row">
-            <li ng-repeat="item in cart" class="col-xs-12 product">
-                <a ui-sref="product_details({product_id: item.product_id})">
-                    <h3>{{item.name}}</h3>
-                    <h4>{{item.price | currency}}</h4>
-                    <img ng-src="/img/products/{{item.image_path}}">
+            <li ng-repeat="product in cart" class="col-xs-12 product">
+                <a ui-sref="product_details({product_id: product.product_id})">
+                    <h3>{{name}}</h3>
+                    <h4>{{price | currency}}</h4>
+                    <img ng-src="/img/products/{{product.image_path}}">
                 </a>
                 <div class="btn-div">
-                    <btn ng-click="removeFromCart(item.item_id)" class="btn btn-default ib">Remove from cart</btn>
+                    <btn ng-click="removeFromCart(product_id)" class="btn btn-default ib">Remove from cart</btn>
                 </div>
             </li>
         </ul>
