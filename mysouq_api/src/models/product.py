@@ -9,9 +9,16 @@ class Product(Document):
     description = StringField()
     created_at = DateTimeField(default=datetime.utcnow())
     carts = ListField(ReferenceField(Cart))
-    price = FloatField()
     owner_id = StringField()
     is_favorite =BooleanField(default=False)
+    maker = StringField()
+    model = StringField(')
+    img_link = StringField(')
+    specs = TextAreaField('Specifications')
+    memory = IntegerField()
+    ram = IntegerField()
+    price = IntegerField()
+  
     
     # my_image =open('src/endpoints/123.jpg','rb')
     # Product.image_url.replace(my_image,filename='123.jpg')
